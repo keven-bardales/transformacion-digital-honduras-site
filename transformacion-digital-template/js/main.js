@@ -118,4 +118,44 @@
       }
     }
   });
+
+  // js/main.js
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Lista de proveedores
+  const providers = [
+    { name: "Proveedor 1", services: ["Software", "Consultoría"] },
+    { name: "Proveedor 2", services: ["Big Data", "IA"] },
+    { name: "Proveedor 3", services: ["Cloud", "Seguridad"] },
+    { name: "Proveedor 4", services: ["Desarrollo Web", "DevOps"] },
+    { name: "Proveedor 5", services: ["Análisis de Datos", "Consultoría"] },
+  ];
+
+  // Contenedor para las tarjetas de proveedores
+  const providersGrid = document.getElementById("providersGrid");
+
+  // Renderizar cada proveedor
+  providers.forEach((provider) => {
+    const card = document.createElement("div");
+    card.classList.add("provider-card");
+
+    const name = document.createElement("h3");
+    name.textContent = provider.name;
+
+    const chipsContainer = document.createElement("div");
+    chipsContainer.classList.add("chips");
+
+    provider.services.forEach((service) => {
+      const chip = document.createElement("span");
+      chip.classList.add("chip");
+      chip.textContent = service;
+      chipsContainer.appendChild(chip);
+    });
+
+    card.appendChild(name);
+    card.appendChild(chipsContainer);
+    providersGrid.appendChild(card);
+  });
+});
+
 })();
