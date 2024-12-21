@@ -4,10 +4,28 @@
   label: Landing page
   screenshotPath: ../images/template-previews/landing-page.png
 -->
-{% extends "./layouts/base.html" %} {% block header %} {% include "partials/header-no-navigation.html" %} {% endblock header %} {% block body %} {%
-dnd_area "dnd_area" label="Main section", class="body-container body-container--landing-page" %} {# Hero banner #} {% include_dnd_partial
-path="../sections/hero-banner.html", context={ "content": "
-<h1>Descarga tu eBook gratuito</h1>
-<p>Usa este espacio para contarle a todos de qué trata tu eBook.</p>
-" } %} {# Three column image with text #} {% include_dnd_partial path="../sections/multi-column-content.html", context={ "background_color": "#FFFFFF"
-} %} {% end_dnd_area %} {% endblock body %} {% block footer %} {% include "partials/footer.html" %} {% endblock footer %}
+{% extends "./layouts/base.html" %} {% block header %} {% include "partials/header-no-navigation.html" %} {% endblock header %} {% block body %}
+<section class="hero">
+  <div class="hero-content">
+    <h1>Transformación Digital en Honduras</h1>
+    <p>Transforma tu negocio con los mejores proveedores de servicios especializados.</p>
+    <a href="#providers" class="cta-button">Ver Proveedores</a>
+  </div>
+</section>
+
+<section id="providers" class="providers-section">
+  <h2>Nuestros Proveedores</h2>
+  <div class="providers-grid" id="providersGrid">
+    <!-- Los proveedores se cargarán dinámicamente desde JavaScript -->
+  </div>
+</section>
+
+<section class="newsletter">
+  <h2>Suscríbete a nuestro Newsletter</h2>
+  <p>Recibe noticias y recursos de transformación digital directamente en tu correo.</p>
+  <form>
+    <input type="email" placeholder="Tu correo electrónico" required />
+    <button type="submit">Suscribirme</button>
+  </form>
+</section>
+{% endblock body %} {% block footer %} {% include "partials/footer.html" %} {% endblock footer %}

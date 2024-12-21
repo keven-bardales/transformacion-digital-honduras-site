@@ -87,38 +87,8 @@
     });
   }
 
-  // Execute JavaScript on document ready
-  domReady(function () {
-    if (!document.body) {
-      return;
-    } else {
-      // Function dependent on language switcher
-      if (langSwitcher) {
-        langToggle.addEventListener('click', toggleLang);
-      }
-
-      // Function dependent on navigation
-      if (navToggle) {
-        navToggle.addEventListener('click', toggleNav);
-      }
-
-      // Function dependent on search field
-      if (searchToggle) {
-        searchToggle.addEventListener('click', toggleSearch);
-      }
-
-      // Function dependent on close toggle
-      if (closeToggle) {
-        closeToggle.addEventListener('click', closeAll);
-      }
-
-      // Function dependent on email unsubscribe from all input
-      if (emailGlobalUnsub) {
-        emailGlobalUnsub.addEventListener('change', toggleDisabled);
-      }
-    }
-  });
-
+  function loadProviders() {
+    
   // js/main.js
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -157,5 +127,44 @@ document.addEventListener("DOMContentLoaded", () => {
     providersGrid.appendChild(card);
   });
 });
+  }
+
+  // Execute JavaScript on document ready
+  domReady(function () {
+    if (!document.body) {
+      return;
+    } else {
+      // Function dependent on language switcher
+      if (langSwitcher) {
+        langToggle.addEventListener('click', toggleLang);
+      }
+
+      // Function dependent on navigation
+      if (navToggle) {
+        navToggle.addEventListener('click', toggleNav);
+      }
+
+      // Function dependent on search field
+      if (searchToggle) {
+        searchToggle.addEventListener('click', toggleSearch);
+      }
+
+      // Function dependent on close toggle
+      if (closeToggle) {
+        closeToggle.addEventListener('click', closeAll);
+      }
+
+      // Function dependent on email unsubscribe from all input
+      if (emailGlobalUnsub) {
+        emailGlobalUnsub.addEventListener('change', toggleDisabled);
+      }
+
+      // Function dependent on providers page
+      if (document.getElementById('providersGrid')) {
+        loadProviders();
+      }
+    }
+  });
+
 
 })();
