@@ -1,0 +1,30 @@
+<!--
+  templateType: section
+  label: Hero Banner
+  isAvailableForNewContent: true
+  screenshotPath: ../images/hero-banner.png
+  description: "A full-page hero banner with a headline and CTA button."
+-->
+{% dnd_section
+  background_color="#00a5bd",
+  vertical_alignment="CENTER",
+  padding="large",
+  css_classes="hero"
+%}
+  {% dnd_row %}
+    {% dnd_column width=12 %}
+      {% dnd_module
+        path="@hubspot/rich_text",
+        html="<h1>Transformación Digital en Honduras</h1><p>Transforma tu negocio con los mejores proveedores de servicios especializados.</p>"
+      %}
+      {% end_dnd_module %}
+      {% dnd_module
+        path="@hubspot/button",
+        label="Ver Proveedores",
+        link="#providers",
+        type="primary"
+      %}
+      {% end_dnd_module %}
+    {% end_dnd_column %}
+  {% end_dnd_row %}
+{% end_dnd_section %}

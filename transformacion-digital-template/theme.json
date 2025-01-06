@@ -1,14 +1,14 @@
 {
-  "label": "CMS theme boilerplate",
+  "label": "Tema de Transformación Digital en Honduras",
   "author": {
     "name": "HubSpot",
     "email": "hs-content-assets@hubspot.com",
     "url": "https://www.hubspot.com/"
-	},
+  },
   "documentation_url": "https://developers.hubspot.com/docs/cms/building-blocks/themes/hubspot-cms-boilerplate",
   "example_url": "https://boilerplate.hubspotcms.com",
-  "preview_path": "./templates/home.html",
-  "screenshot_path": "./images/template-previews/home.png",
+  "preview_path": "./templates/landing-page.html",
+  "screenshot_path": "./images/template-previews/landing-page.png",
   "enable_domain_stylesheets": false,
   "license": "./license.txt",
   "responsive_breakpoints": [
@@ -18,6 +18,47 @@
       "previewWidth": {
         "value": 477
       }
+    }
+  ],
+  "is_available_for_new_content": true,
+  "settings": [
+    {
+      "label": "Colores del Tema",
+      "name": "theme_colors",
+      "type": "group",
+      "children": [
+        {
+          "label": "Color Primario",
+          "name": "primary_color",
+          "type": "color",
+          "default": "#00A5BD"
+        },
+        {
+          "label": "Color Secundario",
+          "name": "secondary_color",
+          "type": "color",
+          "default": "#2C5364"
+        },
+        {
+          "label": "Color de Fondo",
+          "name": "background_color",
+          "type": "color",
+          "default": "#203A43"
+        }
+      ]
+    },
+    {
+      "label": "Fuentes del Tema",
+      "name": "theme_fonts",
+      "type": "group",
+      "children": [
+        {
+          "label": "Fuente Principal",
+          "name": "primary_font",
+          "type": "font",
+          "default": "Poppins"
+        }
+      ]
     }
   ]
 }

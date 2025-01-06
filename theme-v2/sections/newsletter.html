@@ -1,0 +1,28 @@
+<!--
+  templateType: section
+  label: Newsletter Section
+  isAvailableForNewContent: true
+  screenshotPath: ../images/newsletter-section.png
+  description: "A newsletter subscription section with a form."
+-->
+{% dnd_section
+    background_color="#2c5364",
+    padding="large",
+    css_classes="newsletter"
+  %}
+    {% dnd_row %}
+      {% dnd_column width=12 %}
+        {% dnd_module
+          path="@hubspot/rich_text",
+          html="<h2>Suscríbete a nuestro Newsletter</h2><p>Recibe noticias directamente en tu correo.</p>"
+        %}
+        {% end_dnd_module %}
+        {% dnd_module
+          path="@hubspot/form",
+          form_id="your_form_id"
+        %}
+        {% end_dnd_module %}
+      {% end_dnd_column %}
+    {% end_dnd_row %}
+  {% end_dnd_section %}
+  

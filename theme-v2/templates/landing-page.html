@@ -1,0 +1,23 @@
+<!--
+  templateType: page
+  label: Main Template
+  isAvailableForNewContent: true
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+  {% dnd_area "main_content"
+    label="Main Content Area",
+    class="body-container"
+  %}
+    {% include_dnd_partial
+      path="../sections/hero-banner.html"
+    %}
+    {% include_dnd_partial
+      path="../sections/providers-section.html"
+    %}
+    {% include_dnd_partial
+      path="../sections/newsletter.html"
+    %}
+  {% end_dnd_area %}
+{% endblock body %}

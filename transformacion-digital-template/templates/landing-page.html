@@ -7,25 +7,25 @@
 {% extends "./layouts/base.html" %} {% block header %} {% include "partials/header-no-navigation.html" %} {% endblock header %} {% block body %}
 <section class="hero">
   <div class="hero-content">
-    <h1>Transformación Digital en Honduras</h1>
-    <p>Transforma tu negocio con los mejores proveedores de servicios especializados.</p>
-    <a href="#providers" class="cta-button">Ver Proveedores</a>
+    <h1>{{ hero_title }}</h1>
+    <p>{{ hero_description }}</p>
+    <a href="#providers" class="cta-button">{{ hero_button_text }}</a>
   </div>
 </section>
 
 <section id="providers" class="providers-section">
-  <h2>Nuestros Proveedores</h2>
+  <h2>{{ providers_title }}</h2>
   <div class="providers-grid" id="providersGrid">
     <!-- Los proveedores se cargarán dinámicamente desde JavaScript -->
   </div>
 </section>
 
 <section class="newsletter">
-  <h2>Suscríbete a nuestro Newsletter</h2>
-  <p>Recibe noticias y recursos de transformación digital directamente en tu correo.</p>
+  <h2>{{ newsletter_title }}</h2>
+  <p>{{ newsletter_description }}</p>
   <form>
-    <input type="email" placeholder="Tu correo electrónico" required />
-    <button type="submit">Suscribirme</button>
+    <input type="email" placeholder="{{ newsletter_placeholder }}" required />
+    <button type="submit">{{ newsletter_button_text }}</button>
   </form>
 </section>
 {% endblock body %} {% block footer %} {% include "partials/footer.html" %} {% endblock footer %}

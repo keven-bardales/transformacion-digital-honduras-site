@@ -1,0 +1,50 @@
+[
+  {
+    "label": "Título del Hero",
+    "name": "hero_title",
+    "type": "text",
+    "default": "Transformación Digital en Honduras"
+  },
+  {
+    "label": "Descripción del Hero",
+    "name": "hero_description",
+    "type": "textarea",
+    "default": "Transforma tu negocio con los mejores proveedores de servicios especializados."
+  },
+  {
+    "label": "Texto del Botón del Hero",
+    "name": "hero_button_text",
+    "type": "text",
+    "default": "Ver Proveedores"
+  },
+  {
+    "label": "Título de Proveedores",
+    "name": "providers_title",
+    "type": "text",
+    "default": "Nuestros Proveedores"
+  },
+  {
+    "label": "Título del Newsletter",
+    "name": "newsletter_title",
+    "type": "text",
+    "default": "Suscríbete a nuestro Newsletter"
+  },
+  {
+    "label": "Descripción del Newsletter",
+    "name": "newsletter_description",
+    "type": "textarea",
+    "default": "Recibe noticias y recursos de transformación digital directamente en tu correo."
+  },
+  {
+    "label": "Placeholder del Newsletter",
+    "name": "newsletter_placeholder",
+    "type": "text",
+    "default": "Tu correo electrónico"
+  },
+  {
+    "label": "Texto del Botón del Newsletter",
+    "name": "newsletter_button_text",
+    "type": "text",
+    "default": "Suscribirme"
+  }
+]

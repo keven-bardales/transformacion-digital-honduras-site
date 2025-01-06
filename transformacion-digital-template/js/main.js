@@ -13,6 +13,35 @@
   );
   var emailGlobalUnsub = document.querySelector('input[name="globalunsub"]');
 
+     // Array de proveedores
+     const providers = [
+      {
+        name: "Proveedor 1",
+        image: "https://via.placeholder.com/150",
+        services: ["Software", "Consultoría"],
+      },
+      {
+        name: "Proveedor 2",
+        image: "https://via.placeholder.com/150",
+        services: ["Big Data", "IA"],
+      },
+      {
+        name: "Proveedor 3",
+        image: "https://via.placeholder.com/150",
+        services: ["Cloud", "Seguridad"],
+      },
+      {
+        name: "Proveedor 4",
+        image: "https://via.placeholder.com/150",
+        services: ["Desarrollo Web", "DevOps"],
+      },
+      {
+        name: "Proveedor 5",
+        image: "https://via.placeholder.com/150",
+        services: ["Análisis de Datos", "Consultoría"],
+      },
+    ];
+
   // Functions
 
   // Function for executing code on document ready
@@ -87,48 +116,46 @@
     });
   }
 
-  function loadProviders() {
-    
-  // js/main.js
 
-document.addEventListener("DOMContentLoaded", () => {
-  // Lista de proveedores
-  const providers = [
-    { name: "Proveedor 1", services: ["Software", "Consultoría"] },
-    { name: "Proveedor 2", services: ["Big Data", "IA"] },
-    { name: "Proveedor 3", services: ["Cloud", "Seguridad"] },
-    { name: "Proveedor 4", services: ["Desarrollo Web", "DevOps"] },
-    { name: "Proveedor 5", services: ["Análisis de Datos", "Consultoría"] },
-  ];
+      // Función para renderizar las tarjetas
+      function renderProviders() {
+        const providersGrid = document.getElementById("providersGrid");
 
-  // Contenedor para las tarjetas de proveedores
-  const providersGrid = document.getElementById("providersGrid");
+        // Genera cada tarjeta de proveedor
+        providers.forEach((provider) => {
+          // Crear elementos
+          const card = document.createElement("div");
+          card.classList.add("provider-card");
 
-  // Renderizar cada proveedor
-  providers.forEach((provider) => {
-    const card = document.createElement("div");
-    card.classList.add("provider-card");
+          const img = document.createElement("img");
+          img.src = provider.image;
+          img.alt = `Logo ${provider.name}`;
 
-    const name = document.createElement("h3");
-    name.textContent = provider.name;
+          const name = document.createElement("h3");
+          name.textContent = provider.name;
 
-    const chipsContainer = document.createElement("div");
-    chipsContainer.classList.add("chips");
+          const chipsContainer = document.createElement("div");
+          chipsContainer.classList.add("chips");
 
-    provider.services.forEach((service) => {
-      const chip = document.createElement("span");
-      chip.classList.add("chip");
-      chip.textContent = service;
-      chipsContainer.appendChild(chip);
-    });
+          // Generar chips de servicios
+          provider.services.forEach((service) => {
+            const chip = document.createElement("span");
+            chip.classList.add("chip");
+            chip.textContent = service;
+            chipsContainer.appendChild(chip);
+          });
 
-    card.appendChild(name);
-    card.appendChild(chipsContainer);
-    providersGrid.appendChild(card);
-  });
-});
-  }
+          // Agregar elementos a la tarjeta
+          card.appendChild(img);
+          card.appendChild(name);
+          card.appendChild(chipsContainer);
 
+          // Agregar tarjeta al contenedor
+          providersGrid.appendChild(card);
+        });
+      }
+
+ 
   // Execute JavaScript on document ready
   domReady(function () {
     if (!document.body) {
@@ -161,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Function dependent on providers page
       if (document.getElementById('providersGrid')) {
-        loadProviders();
+        renderProviders();
       }
     }
   });
