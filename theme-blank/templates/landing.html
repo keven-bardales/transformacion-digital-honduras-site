@@ -1,0 +1,35 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Landing page
+  screenshotPath: ../images/template-previews/landing-page.png
+-->
+{% extends "./layouts/base.html" %} {% block header %} {% include "partials/header-no-navigation.html" %} {% endblock header %} {% block body %}
+<div>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Transformación Digital en Honduras</h1>
+      <p>Transforma tu negocio con los mejores proveedores de servicios especializados.</p>
+      <a href="#providers" class="cta-button"> Ver Proveedores </a>
+    </div>
+  </header>
+
+  <!-- Providers Section -->
+
+  <section id="providers" class="providers-section">
+    <h2>Nuestros Proveedores</h2>
+    {% module "providers_list_unique" path="../modules/providers.module" %}
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2>Suscríbete a nuestro Newsletter</h2>
+    <p>Recibe noticias y recursos de transformación digital directamente en tu correo.</p>
+    <form>
+      <input type="email" placeholder="Tu correo electrónico" required />
+      <button type="submit">Suscribirme</button>
+    </form>
+  </section>
+</div>
+{% endblock body %} {% block footer %} {% endblock footer %}

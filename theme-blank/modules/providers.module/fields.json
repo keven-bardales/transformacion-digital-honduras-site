@@ -1,0 +1,27 @@
+[
+  {
+    "label": "Proveedores",
+    "name": "providers",
+    "type": "group",
+    "occurrence": {
+      "default": 3,
+      "min": 1
+    },
+    "children": [
+      {
+        "label": "Nombre del proveedor",
+        "name": "provider_name",
+        "type": "text",
+        "required": true,
+        "default": "Proveedor"
+      },
+      {
+        "label": "Servicios",
+        "name": "provider_services",
+        "type": "text",
+        "required": true,
+        "default": "Servicio 1, Servicio 2"
+      }
+    ]
+  }
+]

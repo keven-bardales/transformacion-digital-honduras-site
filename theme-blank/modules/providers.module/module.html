@@ -1,0 +1,12 @@
+<div class="providers-grid">
+  {% for provider in module.providers %}
+  <div class="provider-card">
+    <h3>{{ provider.provider_name }}</h3>
+    <div class="chips">
+      {% for service in provider.provider_services|split(",") %}
+      <span class="chip">{{ service|trim }}</span>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
