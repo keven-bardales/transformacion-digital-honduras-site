@@ -1,0 +1,35 @@
+[
+  {
+    "label": "Título",
+    "name": "newsletter_title",
+    "type": "text",
+    "required": true,
+    "default": "Suscríbete a nuestro Newsletter",
+    "inline_help_text": "Introduce el título principal de la sección de newsletter."
+  },
+  {
+    "label": "Descripción",
+    "name": "newsletter_description",
+    "type": "text",
+    "required": true,
+    "allow_new_line": true,
+    "default": "Recibe noticias y recursos de transformación digital directamente en tu correo.",
+    "inline_help_text": "Proporciona una descripción breve para la sección de newsletter."
+  },
+  {
+    "label": "Texto del botón",
+    "name": "newsletter_button_text",
+    "type": "text",
+    "required": true,
+    "default": "Suscribirme",
+    "inline_help_text": "Texto que aparecerá en el botón de suscripción."
+  },
+  {
+    "label": "Placeholder del campo de email",
+    "name": "newsletter_email_placeholder",
+    "type": "text",
+    "required": true,
+    "default": "Tu correo electrónico",
+    "inline_help_text": "Texto que aparecerá como placeholder en el campo de email."
+  }
+]

@@ -1,0 +1,12 @@
+<header class="hero">
+    <div class="hero-content">
+      <h1>{{ module.hero_title }}</h1>
+      <p>{{ module.hero_description }}</p>
+      <a href="{{ module.hero_button_link.url.href }}" class="cta-button"
+         {% if module.hero_button_link.open_in_new_tab %}target="_blank"{% endif %}
+         {% if module.hero_button_link.no_follow %}rel="nofollow"{% endif %}>
+        {{ module.hero_button_text }}
+      </a>
+    </div>
+  </header>
+  

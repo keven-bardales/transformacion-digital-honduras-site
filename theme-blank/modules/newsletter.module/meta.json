@@ -1,0 +1,10 @@
+{
+  "label": "Newsletter Module",
+  "css_assets": [],
+  "js_assets": [],
+  "global": false,
+  "host_template_types": ["PAGE"],
+  "icon": "standard",
+  "tags": ["newsletter", "form", "subscription"],
+  "is_available_for_new_content": true
+}

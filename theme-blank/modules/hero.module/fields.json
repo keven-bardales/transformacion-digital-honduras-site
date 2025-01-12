@@ -1,0 +1,45 @@
+[
+  {
+    "label": "Título principal",
+    "name": "hero_title",
+    "type": "text",
+    "required": true,
+    "default": "Transformación Digital en Honduras",
+    "inline_help_text": "Introduce el título principal del Hero Section."
+  },
+  {
+    "label": "Descripción",
+    "name": "hero_description",
+    "type": "text",
+    "required": true,
+    "allow_new_line": true,
+    "default": "Transforma tu negocio con los mejores proveedores de servicios especializados.",
+    "inline_help_text": "Proporciona una descripción breve y relevante. Permite saltos de línea."
+  },
+  {
+    "label": "Texto del botón",
+    "name": "hero_button_text",
+    "type": "text",
+    "required": true,
+    "default": "Ver Proveedores",
+    "inline_help_text": "Texto que aparecerá en el botón de llamada a la acción."
+  },
+  {
+    "label": "Enlace del botón",
+    "name": "hero_button_link",
+    "type": "link",
+    "required": true,
+    "supported_types": ["EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS"],
+    "show_advanced_rel_options": true,
+    "default": {
+      "url": {
+        "content_id": null,
+        "type": "EXTERNAL",
+        "href": "#providers"
+      },
+      "open_in_new_tab": false,
+      "no_follow": false
+    },
+    "inline_help_text": "Selecciona el enlace que abrirá el botón."
+  }
+]

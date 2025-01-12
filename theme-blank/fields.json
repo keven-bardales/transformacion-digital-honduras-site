@@ -1,46 +1,157 @@
 [
   {
-    "label": "Global colors",
+    "label": "Global Colors",
     "name": "global_colors",
     "type": "group",
     "children": [
       {
-        "label": "Primary",
-        "name": "primary",
+        "label": "Primary Color",
+        "name": "primary_color",
         "type": "color",
-        "alternate_names": ["primary_color"],
+        "default": {
+          "color": "#000000"
+        },
         "visibility": {
           "hidden_subfields": {
             "opacity": true
           }
-        },
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "brand_settings.primaryColor"
-          }
-        },
-        "default": {
-          "color": "#494A52"
         }
       },
       {
-        "label": "Secondary",
-        "name": "secondary",
+        "label": "Secondary Color",
+        "name": "secondary_color",
         "type": "color",
-        "alternate_names": ["secondary_color"],
+        "default": {
+          "color": "#FFFFFF"
+        },
         "visibility": {
           "hidden_subfields": {
             "opacity": true
           }
-        },
-        "inherited_value": {
-          "property_value_paths": {
-            "color": "brand_settings.colors[1]"
-          }
-        },
-        "default": {
-          "color": "#F8FAFC"
         }
+      },
+      {
+        "label": "Accent Color",
+        "name": "accent_color",
+        "type": "color",
+        "default": {
+          "color": "#333333"
+        },
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        }
+      }
+    ]
+  },
+  {
+    "label": "Styles",
+    "name": "styles",
+    "type": "group",
+    "tab": "STYLE",
+    "children": [
+      {
+        "label": "Background Gradient",
+        "name": "bg_gradient",
+        "type": "gradient",
+        "help_text": "Sets a gradient behind the content.",
+        "default": {
+          "colors": [
+            {
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0,
+                "a": 1
+              }
+            },
+            {
+              "color": {
+                "r": 255,
+                "g": 255,
+                "b": 255,
+                "a": 1
+              }
+            }
+          ],
+          "side_or_corner": {
+            "verticalSide": "BOTTOM",
+            "horizontalSide": "RIGHT"
+          }
+        }
+      },
+      {
+        "label": "Content Spacing",
+        "name": "content_spacing",
+        "type": "spacing",
+        "default": {
+          "padding": {
+            "top": {
+              "value": 20,
+              "units": "px"
+            },
+            "bottom": {
+              "value": 20,
+              "units": "px"
+            },
+            "left": {
+              "value": 15,
+              "units": "px"
+            },
+            "right": {
+              "value": 15,
+              "units": "px"
+            }
+          },
+          "margin": {
+            "top": {
+              "value": 10,
+              "units": "px"
+            },
+            "bottom": {
+              "value": 10,
+              "units": "px"
+            }
+          }
+        }
+      },
+      {
+        "label": "Border Radius",
+        "name": "border_radius",
+        "type": "number",
+        "default": 0,
+        "suffix": "px"
+      }
+    ]
+  },
+  {
+    "label": "Typography",
+    "name": "typography",
+    "type": "group",
+    "children": [
+      {
+        "label": "Primary Font",
+        "name": "primary_font",
+        "type": "font",
+        "default": {
+          "font": "Arial"
+        }
+      },
+      {
+        "label": "Secondary Font",
+        "name": "secondary_font",
+        "type": "font",
+        "default": {
+          "font": "Arial"
+        }
+      },
+      {
+        "label": "Base Font Size",
+        "name": "base_font_size",
+        "type": "number",
+        "default": 16,
+        "suffix": "px"
       }
     ]
   }

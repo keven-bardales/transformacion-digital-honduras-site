@@ -63,6 +63,3 @@ const providers = [
       providersGrid.appendChild(card);
     });
   }
-
-  // Llamar a la función para renderizar proveedores
-  document.addEventListener("DOMContentLoaded", renderProviders);
