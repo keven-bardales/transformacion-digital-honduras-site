@@ -1,0 +1,65 @@
+<!--
+  templateType: blog_listing
+  isAvailableForNewContent: true
+  label: Custom Blog Listing V2
+  screenshotPath: ../images/template-previews/blog-listing.png
+-->
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div class="blog-listing-wrapper">
+  
+  {% if blog_author %}
+  <div class="blog-author-header">
+    <img src="{{ blog_author.avatar }}" alt="Author {{ blog_author.display_name }}">
+    <h1>{{ blog_author.display_name }}</h1>
+    <p>{{ blog_author.bio }}</p>
+  </div>
+  {% elif tag %}
+  <div class="blog-tag-header">
+    <h1>Posts about {{ page_meta.html_title|split(" | ")|last }}</h1>
+  </div>
+  {% else %}
+  <div class="blog-header">
+    <h1>{{ group.public_title }}</h1>
+    <p>{{ group.description }}</p>
+  </div>
+  {% endif %}
+
+  <div class="blog-posts">
+    {% for content in contents %}
+      {% if loop.first and current_page_num == 1 and !topic %}
+      <div class="blog-post-featured">
+        <a href="{{ content.absolute_url }}" class="blog-post-featured__image"
+           style="background-image: url('{{ content.featured_image }}')"></a>
+        <div class="blog-post-featured__content">
+          <h2><a href="{{ content.absolute_url }}">{{ content.name }}</a></h2>
+          <p>{{ content.post_list_content }}</p>
+        </div>
+      </div>
+      {% else %}
+      <div class="blog-post-item">
+        <a href="{{ content.absolute_url }}" class="blog-post-item__image"
+           style="background-image: url('{{ content.featured_image }}')"></a>
+        <div class="blog-post-item__content">
+          <h3><a href="{{ content.absolute_url }}">{{ content.name }}</a></h3>
+          <p>{{ content.post_list_content|truncatehtml(100) }}</p>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {# Pagination #}
+  {% if contents.total_page_count > 1 %}
+  <div class="blog-pagination">
+    <a href="{{ blog_page_link(last_page_num) }}" class="prev">Prev</a>
+    {% for page in range(1, contents.total_page_count + 1) %}
+      <a href="{{ blog_page_link(page) }}" class="{{ 'active' if current_page_num == page }}">{{ page }}</a>
+    {% endfor %}
+    <a href="{{ blog_page_link(current_page_num + 1) }}" class="next">Next</a>
+  </div>
+  {% endif %}
+
+</div>
+{% endblock body %}

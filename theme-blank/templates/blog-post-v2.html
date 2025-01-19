@@ -1,0 +1,68 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Custom Blog Post V2
+  screenshotPath: ../images/template-previews/blog-post.png
+-->
+{% set template_css = "../../css/templates/blog-v2.css" %}
+{% extends "./layouts/base.html" %}
+
+{% block body %}
+<div class="blog-post-wrapper">
+  
+  <article class="blog-post">
+    <h1>{{ content.name }}</h1>
+
+    <div class="blog-post__meta">
+      <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}" class="author-link">
+        {{ content.blog_post_author.display_name }}
+      </a>
+      <div class="blog-post__timestamp">
+        {{ content.publish_date_localized }}
+      </div>
+    </div>
+
+    {% if content.featured_image %}
+      <img class="blog-post__image" src="{{ content.featured_image }}" alt="{{ content.name }}">
+    {% endif %}
+
+    <div class="blog-post__body">
+      {{ content.post_body }}
+    </div>
+
+    {% if content.tag_list %}
+    <div class="blog-post__tags">
+      {% icon name="tag" style="SOLID" %}
+      {% for tag in content.tag_list %}
+        <a class="blog-post__tag-link" href="{{ blog_tag_url(group.id, tag.slug) }}">{{ tag.name }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </article>
+
+  <aside class="blog-author">
+    <img src="{{ content.blog_post_author.avatar }}" alt="Author {{ content.blog_post_author.display_name }}">
+    <h3>Written by <a href="{{ blog_author_url(group.id, content.blog_post_author.slug) }}">{{ content.blog_post_author.display_name }}</a></h3>
+    <p>{{ content.blog_post_author.bio }}</p>
+
+    {% if content.blog_post_author.has_social_profiles %}
+      <div class="blog-author-social">
+        {% if content.blog_post_author.facebook %}
+          <a href="{{ content.blog_post_author.facebook }}" target="_blank" class="social-link">Facebook</a>
+        {% endif %}
+        {% if content.blog_post_author.linkedin %}
+          <a href="{{ content.blog_post_author.linkedin }}" target="_blank" class="social-link">LinkedIn</a>
+        {% endif %}
+        {% if content.blog_post_author.twitter %}
+          <a href="{{ content.blog_post_author.twitter }}" target="_blank" class="social-link">Twitter</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </aside>
+
+  <div class="blog-comments">
+    {% module "blog_comments" path="@hubspot/blog_comments", label="Blog Comments" %}
+  </div>
+
+</div>
+{% endblock body %}
